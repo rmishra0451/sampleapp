@@ -1,0 +1,33 @@
+version: 1.0
+
+phases:
+  install:
+    commands:
+      #installing node js v18.xxx
+      -echo installing node js v18.xxx...
+        -curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
+        -apt install -y nodejs
+      #installing yarn
+      -echo installing yarn...
+        -curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+        -echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+        -apt install --no-install-recommends yarn
+
+  pre_build:
+    commands:
+      #installing dependecies
+      -echo installing dependecies...
+        -yarn
+  
+  build:
+    commands:
+      #building
+      -echo building the app...
+        -yarn run build
+
+artifacts:
+  files:
+    #all
+      -"**/*"
+  discard-paths: no
+  base-directory: sampleapp
