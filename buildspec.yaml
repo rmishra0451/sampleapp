@@ -4,7 +4,7 @@ phases:
   install:
     commands:
       #installing node js v18.xxx
-      -echo installing node js v18.xxx...
+      
         -curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
         -sudo apt install -y nodejs
       #installing yarn
