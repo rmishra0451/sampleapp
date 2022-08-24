@@ -5,8 +5,8 @@ phases:
     commands:
       #installing node js v18.xxx
       -echo installing node js v18.xxx...
-        -curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
-        -apt install -y nodejs
+        -curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+        -sudo apt install -y nodejs
       #installing yarn
       -echo installing yarn...
         -curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
